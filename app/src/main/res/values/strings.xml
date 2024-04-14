@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PractiseProject</string>
+
+    <string name="title_bar_back">返回</string>
+
+    <string name="func_title_room">Room</string>
+    <string name="func_title_coroutines">Kotlin协程</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FFFFFFFF</color>
+    <color name="white">#FF000000</color>
+
+    <color name="color_rv_item_bg_normal">#009688</color>
+    <color name="color_rv_item_bg_press">#4CAF50</color>
+
+    <color name="color_window_background">#33000000</color>
+</resources>
