@@ -11,6 +11,9 @@ import com.xjsd.practiseproject.room.entity.Plan
 import com.xjsd.practiseproject.room.entity.User
 import com.xjsd.practiseproject.room.entity.Work
 
+/**
+ * 数据库.
+ */
 @Database(entities = [User::class, Work::class, Plan::class], version = 1)
 abstract class TestDataBase : RoomDatabase() {
     /**

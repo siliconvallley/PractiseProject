@@ -1,0 +1,51 @@
+# 参考文档：https://docs.gradle.org/8.5/userguide/platforms.html
+# [versions] 用于声明可以被依赖项引用的版本
+# [libraries] 用于声明依赖的别名
+# [bundles] 用于声明依赖包（依赖组）
+# [plugins] 用于声明插件
+
+
+[versions]
+compileSdk = "34"
+minSdk = "24"
+targetSdk = "34"
+versionCode = "1"
+versionName = "1.0"
+# 插件
+application = "8.3.2"
+kotlin = "1.9.10"
+ksp = "1.9.21-1.0.16"
+# 三方库
+core-ktx = "1.10.1"
+appcompat = "1.6.1"
+material = "1.10.0"
+constraintlayout = "2.1.4"
+junit = "4.13.2"
+android-junit = "1.1.5"
+espresso-core = "3.5.1"
+room = "2.5.1"
+moshi = "1.15.1"
+
+
+[libraries]
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+junit = { module = "junit:junit", version.ref = "junit" }
+android-junit = { module = "androidx.test.ext:junit", version.ref = "android-junit" }
+espresso-core  = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-testing = { module = "androidx.room:room-testing", version.ref = "room" }
+moshi = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
+
+[bundles]
+room = ["room-runtime"]
+
+[plugins]
+application = { id = "com.android.application", version.ref = "application" }
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+
