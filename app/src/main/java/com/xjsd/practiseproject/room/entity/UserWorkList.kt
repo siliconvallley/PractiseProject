@@ -4,16 +4,20 @@ import androidx.room.Embedded
 import androidx.room.Relation
 
 /**
- * 用户和对应计划数据.
+ * 用户和对应工作数据.
  *
  * 一对多的关系
  */
-data class UserPlan(
+class UserWorkList(
     @Embedded
     val user: User,
     @Relation(
         parentColumn = "id",
         entityColumn = "userId"
     )
-    val plans: List<Plan>
-)
+    val workList: MutableList<Work>
+) {
+    override fun toString(): String {
+        return "UserWorkList(user=$user, workList=$workList)"
+    }
+}

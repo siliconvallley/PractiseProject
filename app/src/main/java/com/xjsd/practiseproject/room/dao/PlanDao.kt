@@ -36,6 +36,6 @@ interface PlanDao {
      * @param userId 用户ID
      * @return 用户工作
      */
-    @Query("SELECT *FROM `Plan` WHERE userId = :userId")
-    fun findByUserId(userId: Int): List<Plan>
+    // @Query("SELECT *FROM `Plan` WHERE userId = :userId")
+    // fun findByUserId(userId: Int): List<Plan>
 }

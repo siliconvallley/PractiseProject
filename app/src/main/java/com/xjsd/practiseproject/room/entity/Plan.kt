@@ -11,10 +11,9 @@ data class Plan(
     @PrimaryKey(autoGenerate = true)
     val planId: Long = 0,
     val planName: String,
-    val planTime: Long,
-    val userId: Long
+    val planTime: Long
 ) {
     override fun toString(): String {
-        return "Plan(planId=$planId, planName='$planName', planTime=$planTime, userId=$userId)"
+        return "Plan(planId=$planId, planName='$planName', planTime=$planTime)"
     }
 }

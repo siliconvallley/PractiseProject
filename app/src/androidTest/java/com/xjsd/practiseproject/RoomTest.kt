@@ -56,10 +56,17 @@ class RoomTest {
             assertEquals(2, this.size)
             mUserDao.getAll().run {
                 for ((index, value ) in this.withIndex()) {
+                    // 更新
+                    // mUserDao.update(User(id = value.id, name = "修改$index", age = value.age, gender = value.gender))
                     // 插入数据
                     mWorkDao.insertAll(Work(introduce = "打工人$index", userId = value.id))
                 }
+
+                // 删除
+                // mUserDao.delete(this[0])
             }
+
+
 
             mUserWorkDao.getAllUserWork().run {
                 for ((index, value) in this.withIndex()) {

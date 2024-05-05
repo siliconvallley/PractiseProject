@@ -30,7 +30,7 @@ interface UserDao {
      * @param users 用户数据集合
      * @return 插入数据ID集合
      */
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(users: List<User>): List<Long>
 
     /**

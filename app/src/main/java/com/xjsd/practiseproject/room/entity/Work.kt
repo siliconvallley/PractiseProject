@@ -1,9 +1,17 @@
 package com.xjsd.practiseproject.room.entity
 
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(
+    foreignKeys = [ForeignKey(
+        entity = User::class,
+        parentColumns = arrayOf("id"),
+        childColumns = arrayOf("userId"),
+        onDelete = ForeignKey.CASCADE
+    )]
+)
 data class Work(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
