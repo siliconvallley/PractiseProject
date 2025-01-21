@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.application)
     alias(libs.plugins.kotlin)
     alias(libs.plugins.ksp)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 android {
@@ -85,4 +86,8 @@ dependencies {
     testImplementation(libs.room.testing)
     // moshi
     ksp(libs.moshi)
+    // 协程
+    implementation(libs.bundles.coroutines)
+    // 引入kotlinx-serialization-json
+    implementation(libs.kotlinx.serialization.json)
 }

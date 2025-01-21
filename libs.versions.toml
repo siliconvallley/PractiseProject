@@ -12,7 +12,7 @@ targetSdk = "34"
 versionCode = "1"
 versionName = "1.0"
 # 插件
-application = "8.3.2"
+application = "8.7.2"
 kotlin = "1.9.10"
 ksp = "1.9.21-1.0.16"
 # 三方库
@@ -25,7 +25,9 @@ android-junit = "1.1.5"
 espresso-core = "3.5.1"
 room = "2.5.1"
 moshi = "1.15.1"
-
+kotlin-coroutines = "1.8.0"
+kotlinx-serialization-json = "1.7.1"
+lottie = "6.4.1"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
@@ -34,18 +36,25 @@ material = { module = "com.google.android.material:material", version.ref = "mat
 constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 junit = { module = "junit:junit", version.ref = "junit" }
 android-junit = { module = "androidx.test.ext:junit", version.ref = "android-junit" }
-espresso-core  = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
+espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso-core" }
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-testing = { module = "androidx.room:room-testing", version.ref = "room" }
 moshi = { module = "com.squareup.moshi:moshi-kotlin-codegen", version.ref = "moshi" }
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlin-coroutines" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
 
 [bundles]
 room = ["room-runtime"]
+coroutines = ["coroutines-core", "coroutines-android"]
 
 [plugins]
 application = { id = "com.android.application", version.ref = "application" }
 kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
 
