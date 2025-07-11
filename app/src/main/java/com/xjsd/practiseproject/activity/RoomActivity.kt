@@ -1,8 +1,11 @@
 package com.xjsd.practiseproject.activity
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.xjsd.practiseproject.R
@@ -12,21 +15,29 @@ import com.xjsd.practiseproject.ext.logI
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.supervisorScope
 import kotlinx.coroutines.withContext
 
-class RoomActivity : AppCompatActivity(), CoroutineScope by MainScope() {
+class RoomActivity : BaseActivity(), CoroutineScope by MainScope() {
     companion object {
         private const val TAG = "RoomActivity"
     }
 
     private lateinit var mRoomBinding: ActivityRoomBinding
+    private val mState by lazy { MutableSharedFlow<String>() }
+    private var mState1 = MutableStateFlow("Hello")
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        mRoomBinding = ActivityRoomBinding.inflate(layoutInflater)
-        setContentView(mRoomBinding.root)
+    override fun getRootView(): View {
+        return ActivityRoomBinding.inflate(layoutInflater).also {
+            mRoomBinding = it
+        }.root
+    }
 
+    override fun create(savedInstanceState: Bundle?) {
         init()
     }
 
@@ -109,6 +120,25 @@ class RoomActivity : AppCompatActivity(), CoroutineScope by MainScope() {
      * 更新数据.
      */
     private fun updateData() {
+        lifecycleScope.launch {
+            withContext(Dispatchers.IO) {
 
+            }
+            supervisorScope {
+
+            }
+            coroutineScope {
+
+            }
+        }
+
+        val launcher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == RESULT_OK) {
+                result.data
+            }
+        }
+        launcher.launch(Intent(this, CoroutinesActivity::class.java))
     }
 }

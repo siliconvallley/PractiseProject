@@ -22,3 +22,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "PractiseProject"
 include(":app")
+include(":libs:lib-algorithm")
+include(":modules:pp-algorithm")
