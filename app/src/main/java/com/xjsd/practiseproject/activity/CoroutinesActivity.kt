@@ -5,22 +5,25 @@ import android.media.AudioDeviceInfo
 import android.media.AudioManager
 import android.os.Build
 import android.os.Bundle
+import android.view.View
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 import com.xjsd.practiseproject.databinding.ActivityCoroutinesBinding
 import com.xjsd.practiseproject.ext.logI
 
-class CoroutinesActivity : AppCompatActivity() {
+class CoroutinesActivity : BaseActivity() {
     companion object {
         private const val TAG = "CoroutinesActivity"
     }
 
     private lateinit var mCoroutinesBinding: ActivityCoroutinesBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        mCoroutinesBinding = ActivityCoroutinesBinding.inflate(layoutInflater)
-        setContentView(mCoroutinesBinding.root)
+    override fun getRootView(): View {
+        return ActivityCoroutinesBinding.inflate(layoutInflater).also {
+            mCoroutinesBinding = it
+        }.root
+    }
+
+    override fun create(savedInstanceState: Bundle?) {
         initListener()
     }
 

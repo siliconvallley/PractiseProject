@@ -71,6 +71,7 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.constraintlayout)
+    implementation(libs.activity)
     testImplementation(libs.junit)
     androidTestImplementation(libs.android.junit)
     androidTestImplementation(libs.espresso.core)
@@ -90,4 +91,7 @@ dependencies {
     implementation(libs.bundles.coroutines)
     // 引入kotlinx-serialization-json
     implementation(libs.kotlinx.serialization.json)
+
+    // 引入定义的模块
+    implementation(project(":modules:pp-algorithm"))
 }
